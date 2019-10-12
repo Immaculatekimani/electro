@@ -202,12 +202,10 @@ ul li a:hover:before{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
     grid-template-areas: 
-        "box card1 card2 card3"
-}
-.cardbox .box{
-    grid-area: box;
-    cursor: pointer;
-}
+        "card1 card2 card3 card4" 
+        "card5 card6 card7 card8"
+    }
+
 .cardbox .card1{
     grid-area: card1;
     background:#fff;
@@ -248,7 +246,7 @@ ul li a:hover:before{
     margin: 0;
 }
 .cardbox .card4{
-    grid-area: card1;
+    grid-area: card4;
     background:#fff;
     box-shadow: 5px 5px 15px #000;
     cursor: pointer;
@@ -261,7 +259,7 @@ ul li a:hover:before{
     margin: 0;
 }
 .cardbox .card5{
-    grid-area: card1;
+    grid-area: card5;
     background:#fff;
     box-shadow: 5px 5px 15px #000;
     cursor: pointer;
@@ -274,7 +272,7 @@ ul li a:hover:before{
     margin: 0;
 }
 .cardbox .card6{
-    grid-area: card1;
+    grid-area: card6;
     background:#fff;
     box-shadow: 5px 5px 15px #000;
     cursor: pointer;
@@ -287,7 +285,7 @@ ul li a:hover:before{
     margin: 0;
 }
 .cardbox .card7{
-    grid-area: card1;
+    grid-area: card7;
     background:#fff;
     box-shadow: 5px 5px 15px #000;
     cursor: pointer;
@@ -300,7 +298,7 @@ ul li a:hover:before{
     margin: 0;
 }
 .cardbox .card8{
-    grid-area: card1;
+    grid-area: card8;
     background:#fff;
     box-shadow: 5px 5px 15px #000;
     cursor: pointer;
@@ -317,38 +315,10 @@ ul li a:hover:before{
     height: 200px;
     cursor: pointer;
 }
-.box{
-    width: 90%;
-    padding: 0 10px 10px 10px;
-}
-.box h3{
-    color: #262626;
-    font-family: arial;
-    font-size: 35px;
-    border:3px solid #262626;
-    padding: 5px;
-    text-align: center;
-    cursor: pointer;
-}
-.box p{
-    font-family: arial;
-    font-size: 16px;
-    color: #262626;
-    text-align: center;
-    cursor: pointer;
-}
-.title{
-    padding: 0 10px 10px 10px;
-}
-.box .btn{
-    margin: 0 20px 0 20px;
-    text-align: center;
-    padding: 10px 0 10px 0;
-    background:#007a99;
-    color: #fff;
-    font-family: verdana;
-    cursor: pointer;
-}
+
+
+
+
 .footer {
       
     left: 0;
@@ -381,11 +351,13 @@ ul li a:hover:before{
     padding-right: 80px;
     display: grid;
     grid-gap: 30px;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 3fr 3fr;
     grid-template-rows: 1fr 1fr;
     grid-template-areas: 
-        "box card1"
-        "card2 card3"
+        "card1 card2"
+        "card3 card4"
+        "card5 card6"
+        "card7 card8"
 }
 
 
