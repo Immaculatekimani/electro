@@ -2,10 +2,10 @@
 -- version 4.9.0.1
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost
--- Generation Time: Oct 08, 2019 at 10:48 AM
+-- Host: 127.0.0.1
+-- Generation Time: Oct 15, 2019 at 10:56 AM
 -- Server version: 10.4.6-MariaDB
--- PHP Version: 7.3.8
+-- PHP Version: 7.3.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -19,7 +19,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `register`
+-- Database: `ecom_store`
 --
 
 -- --------------------------------------------------------
@@ -46,7 +46,8 @@ CREATE TABLE `arduino` (
 
 INSERT INTO `arduino` (`ardi_id`, `a_cat_id`, `cat_id`, `date`, `ardi_title`, `ardi_img1`, `ardi_price`, `ardi_keyword`, `ardi_desc`) VALUES
 (28, 1, 1, '2019-09-29 14:30:17.000000', 'Arduino Uno', 'arduino_uno.jpg', 1000, 'Arduino', 'The Arduino Uno is an open-source microcontroller board based on the Microchip ATmega328P microcontroller and developed by Arduino.cc.'),
-(29, 1, 1, '2019-09-29 15:44:21.408141', 'Arduino Mega', 'arduino_nano.jpg', 500, 'arduino', 'The MEGA 2560 is designed for more complex projects. With 54 digital I/O pins, 16 analog inputs and a larger space for your sketch it is the recommended board for 3D printers and robotics projects. ');
+(29, 1, 1, '2019-09-29 15:44:21.408141', 'Arduino Mega', 'arduino_nano.jpg', 500, 'arduino', 'The MEGA 2560 is designed for more complex projects. With 54 digital I/O pins, 16 analog inputs and a larger space for your sketch it is the recommended board for 3D printers and robotics projects. '),
+(31, 1, 1, '2019-10-15 07:51:57.000000', 'Duemilanove', 'Duemilanove.jpg', 677, 'arduino', 'Dumilanove is a arduino product used for creating projects.');
 
 -- --------------------------------------------------------
 
@@ -71,7 +72,8 @@ CREATE TABLE `breadboard` (
 --
 
 INSERT INTO `breadboard` (`bread_id`, `b_cat_id`, `cat_id`, `date`, `b_title`, `b_img1`, `b_price`, `b_keyword`, `b_desc`) VALUES
-(2, 1, 5, '2019-09-30 16:16:04', 'Copper Perfboard', 'copper perfboard.jpg', 400, 'breadboard', 'Perfboard is a material for prototyping electronic circuits.It is a thin, rigid sheet with holes pre-drilled at standard intervals across a grid, usually a square grid of 0.1 inches (2.54 mm) spacing. These holes are ringed by round or square copper pads, though bare boards are also available.');
+(2, 1, 5, '2019-10-05 16:38:21', 'Copper Perfboard', 'copper_perfboard.jpg', 400, 'breadboard', 'Perfboard is a material for prototyping electronic circuits.It is a thin, rigid sheet with holes pre-drilled at standard intervals across a grid, usually a square grid of 0.1 inches (2.54 mm) spacing. These holes are ringed by round or square copper pads, though bare boards are also available.'),
+(3, 1, 5, '2019-10-15 08:20:15', 'tfxfv', 'copper_perfboard.jpg', 100, 'rty', 'cfcrctvy');
 
 -- --------------------------------------------------------
 
@@ -98,6 +100,67 @@ CREATE TABLE `capacitor` (
 INSERT INTO `capacitor` (`cap_id`, `c_cat_id`, `cat_id`, `date`, `cap_title`, `cap_img1`, `cap_price`, `cap_keyword`, `cap_desc`) VALUES
 (2, 1, 3, '2019-09-30 15:41:14.000000', 'Ceramic Capacitor', 'capacitor2.jpg', 400, 'capacitor', 'A ceramic capacitor is a non-polarized fixed capacitor made out of two or more alternating layers of ceramic and metal in which the ceramic material acts as the dielectric and the metal acts as the electrodes.'),
 (3, 1, 3, '2019-09-30 15:47:35.000000', 'Electrolytic Capacitor', 'capacitor.jpg', 300, 'capacitor', 'An electrolytic capacitor is a type of capacitor that uses an electrolyte to achieve a larger capacitance than other capacitor types.It can be used as filter for audio amplifiers\r\n\r\n');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart_product`
+--
+
+CREATE TABLE `cart_product` (
+  `P_ID` int(100) NOT NULL,
+  `P_IMAGE` text NOT NULL,
+  `P_NAME` text NOT NULL,
+  `P_PRICE` int(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart_product`
+--
+
+INSERT INTO `cart_product` (`P_ID`, `P_IMAGE`, `P_NAME`, `P_PRICE`) VALUES
+(315, 'capacitor.jpg', 'Electrolytic Capacitor', 300),
+(316, 'transistors_3_pack.jpg', 'Transistor', 300);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `cart_product_final`
+--
+
+CREATE TABLE `cart_product_final` (
+  `ID` int(11) NOT NULL,
+  `USER_ID` int(20) NOT NULL,
+  `P_IMAGE` text NOT NULL,
+  `P_NAME` text NOT NULL,
+  `P_PRICE` int(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `cart_product_final`
+--
+
+INSERT INTO `cart_product_final` (`ID`, `USER_ID`, `P_IMAGE`, `P_NAME`, `P_PRICE`) VALUES
+(1, 1, 'transistors_3_pack.jpg', '0', 300),
+(2, 1, 'jumper_wires.jpg', 'Jumper Wires', 100),
+(3, 1, 'capacitor2.jpg', 'Ceramic Capacitor', 400),
+(4, 1, 'copper_perfboard.jpg', 'Copper Perfboard', 400),
+(5, 2, 'led.jpg', 'LED', 100),
+(6, 2, 'arduino_nano.jpg', 'Arduino Mega', 500),
+(7, 2, 'Duemilanove.jpg', 'Duemilanove', 500),
+(8, 2, 'led.jpg', 'LED', 100),
+(9, 2, 'capacitor.jpg', 'Electrolytic Capacitor', 300),
+(10, 2, 'arduino_nano.jpg', 'Arduino Mega', 500),
+(11, 2, 'led.jpg', 'LED', 100),
+(12, 2, 'copper_perfboard.jpg', 'Copper Perfboard', 400),
+(13, 2, 'led.jpg', 'LED', 100),
+(14, 2, 'capacitor.jpg', 'Electrolytic Capacitor', 300),
+(15, 2, 'arduino_uno.jpg', 'Arduino Uno', 1000),
+(16, 2, 'magnetic_inductor.jpg', 'Magnetic Inductors', 200),
+(17, 2, 'transistors_3_pack.jpg', 'Transistor', 300),
+(18, 2, 'magnetic_inductor.jpg', 'Magnetic Inductors', 200),
+(19, 2, 'Duemilanove.jpg', 'Duemilanove', 677),
+(20, 2, 'jumper_wires.jpg', 'Jumper Wires', 100);
 
 -- --------------------------------------------------------
 
@@ -148,7 +211,7 @@ CREATE TABLE `inductors` (
 --
 
 INSERT INTO `inductors` (`inductor_id`, `i_cat_id`, `cat_id`, `date`, `i_title`, `i_img1`, `i_price`, `i_keyword`, `i_desc`) VALUES
-(3, 1, 7, '2019-10-01 16:51:42', 'Magnetic Inductors', 'magnetic inductor.jpg', 200, 'inductor', 'Magnetic inductors are used in low-frequency power supplies as filter chokes, filter circuits, common mode chokes, noise suppression, and high frequency power supplies.');
+(3, 1, 7, '2019-10-05 17:49:47', 'Magnetic Inductors', 'magnetic_inductor.jpg', 200, 'inductor', 'Magnetic inductors are used in low-frequency power supplies as filter chokes, filter circuits, common mode chokes, noise suppression, and high frequency power supplies.');
 
 -- --------------------------------------------------------
 
@@ -258,7 +321,7 @@ CREATE TABLE `transistors` (
   `t_cat_id` int(10) NOT NULL,
   `cat_id` int(10) NOT NULL,
   `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
-  `t_title` int(100) NOT NULL,
+  `t_title` text NOT NULL,
   `t_img1` text NOT NULL,
   `t_price` int(100) NOT NULL,
   `t_keyword` text NOT NULL,
@@ -270,7 +333,7 @@ CREATE TABLE `transistors` (
 --
 
 INSERT INTO `transistors` (`transistor_id`, `t_cat_id`, `cat_id`, `date`, `t_title`, `t_img1`, `t_price`, `t_keyword`, `t_desc`) VALUES
-(2, 1, 8, '2019-10-01 16:59:32', 0, 'transistors 3 pack.jpg', 300, 'transistor', 'A transistor is a semiconductor device used to amplify or switch electronic signals and electrical power. It is composed of semiconductor material usually with at least three terminals for connection to an external circuit.');
+(2, 1, 8, '2019-10-15 07:40:49', 'Transistor', 'transistors_3_pack.jpg', 300, 'transistor', 'A transistor is a semiconductor device used to amplify or switch electronic signals and electrical power. It is composed of semiconductor material usually with at least three terminals for connection to an external circuit.');
 
 -- --------------------------------------------------------
 
@@ -293,8 +356,8 @@ CREATE TABLE `usr_reg` (
 --
 
 INSERT INTO `usr_reg` (`id`, `name`, `address`, `email`, `phno`, `user`, `psw`) VALUES
-(1, 'rutuja', 'sf fsdg', 'rty@gmal.com', 8796785434, 'ret', 'gfA@123'),
-(2, 'rtv', 'aSVxbn', 'ert@gmail.com', 5678345676, 'tuy', 'ACb@123');
+(2, '', '', '', 0, '', ''),
+(3, 'merin', 'aaaa', 'abc@1234', 9876543, 'merin', 'Pass1@23');
 
 -- --------------------------------------------------------
 
@@ -319,7 +382,8 @@ CREATE TABLE `wires` (
 --
 
 INSERT INTO `wires` (`wire_id`, `w_cat_id`, `cat_id`, `date`, `w_title`, `w_img1`, `w_price`, `w_keyword`, `w_desc`) VALUES
-(3, 1, 6, '2019-10-01 16:39:55.000000', 'Jumper Wires', 'jumper wires.jpg', 100, 'wires', 'A jump wire is an electrical wire, or group of them in a cable, with a connector or pin at each end , which is normally used to interconnect the components of a breadboard or other prototype or test circuit, internally or with other equipment or components, without soldering.');
+(3, 1, 6, '2019-10-05 17:51:22.222378', 'Jumper Wires', 'jumper_wires.jpg', 100, 'wires', 'A jump wire is an electrical wire, or group of them in a cable, with a connector or pin at each end , which is normally used to interconnect the components of a breadboard or other prototype or test circuit, internally or with other equipment or components, without soldering.'),
+(4, 1, 6, '2019-10-15 08:07:43.000000', 'thg', 'jumper_wires.jpg', 76, 'wires', 'wtegjh');
 
 --
 -- Indexes for dumped tables
@@ -342,6 +406,18 @@ ALTER TABLE `breadboard`
 --
 ALTER TABLE `capacitor`
   ADD PRIMARY KEY (`cap_id`);
+
+--
+-- Indexes for table `cart_product`
+--
+ALTER TABLE `cart_product`
+  ADD PRIMARY KEY (`P_ID`);
+
+--
+-- Indexes for table `cart_product_final`
+--
+ALTER TABLE `cart_product_final`
+  ADD PRIMARY KEY (`ID`);
 
 --
 -- Indexes for table `category`
@@ -405,19 +481,31 @@ ALTER TABLE `wires`
 -- AUTO_INCREMENT for table `arduino`
 --
 ALTER TABLE `arduino`
-  MODIFY `ardi_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `ardi_id` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `breadboard`
 --
 ALTER TABLE `breadboard`
-  MODIFY `bread_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `bread_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `capacitor`
 --
 ALTER TABLE `capacitor`
   MODIFY `cap_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT for table `cart_product`
+--
+ALTER TABLE `cart_product`
+  MODIFY `P_ID` int(100) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=317;
+
+--
+-- AUTO_INCREMENT for table `cart_product_final`
+--
+ALTER TABLE `cart_product_final`
+  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -465,13 +553,13 @@ ALTER TABLE `transistors`
 -- AUTO_INCREMENT for table `usr_reg`
 --
 ALTER TABLE `usr_reg`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `wires`
 --
 ALTER TABLE `wires`
-  MODIFY `wire_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `wire_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

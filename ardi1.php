@@ -2,19 +2,20 @@
 
 include("includes/db.php");
 include("includes/ardi1func.php");
-
+include("cartItemsCount.php");
 ?>
+
 
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Arduino</title>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
-    <link rel="stylesheet" type="text/css" href="style/css/web6.css">
     
+    <title>Arduino</title>
+    <link rel="stylesheet" type="text/css" href="web7.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+    <link rel="stylesheet" href="styles.css" /> 
+    </head>
 <style>
 
 html, body {
@@ -31,7 +32,7 @@ html, body {
   display: flex;
 }
 
-.main {
+.main1 {  /* CHANGED */
   max-width: 1200px;
   margin: auto;
   
@@ -40,6 +41,7 @@ html, body {
   background-color: white;
   padding: 10px;
 }
+
 @media (max-width: 940px) {
   .container {
     flex-direction: column;
@@ -50,19 +52,23 @@ html, body {
   .right-column {
     width: 100%;
   }
+
   .left-column img {
-    width: 300px;
+    width: 200px;
     right: 0;
     top: -65px;
     left: initial;
   }
 }
+
 @media (max-width: 535px) {
   .left-column img {
-    width: 220px;
+    width: 150px;
     top: -85px;
   }
 }
+
+
 
 .btn {
   background-color: green;
@@ -82,7 +88,8 @@ html, body {
  
 }
 .left-column {
-  width: 65%;
+  margin-left:200px; /* i changed */
+  width: 35%;   /* i changed */
   position: relative;
 }
  
@@ -98,10 +105,10 @@ html, body {
   color: #FFFFFF;
   text-decoration: none;
   padding: 12px 30px;
-  transition: all .5s;
+  transition: all .2s;
 }
 .cart-btn:hover {
-  background-color: #64af3d;
+  background-color: #2BC2FA;
 }
 .row{
   padding:0px;
@@ -112,27 +119,33 @@ html, body {
 
 
 </style>
-</head>
+
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 <body>
    <!-- MAIN (Center website) -->
-   <img src="logo.jpeg"> 
-<div class="main" >
-    <div class="navbar">
-               
-         
-             
-        <ul>
-                <li><font size="5"><a href="#">LOGIN</a></font></li>
 
-        </ul>
-
-       <!-- <div class="shopping">
-               <i class="fas fa-shopping-cart"></i>
-               
-            </div> -->
-    </div>   
-
+   <!---------------------------------HEADER CONTENTS STARTS--------------------------->
+<main class="main">
+        <div class="navbar">
+            <div class="iconbar">
+            <img src="logo.jpeg" height="100px">
+             <a class="loginhead" href="#"></a>
+                  <ul>
+                          <li><font size="6"><a href="logout.php">LOGOUT</a></font></li>
+                  </ul> 
+                <a class="notification" title="Cart" href="cart.php"><span><i class="fa fa-shopping-cart"></i></span>
+                  <span class="badge"><?php countCartItems();?></span></a> 
+                  <a class="notification" title="Home" href="home.php" ><i class="fa fa-home"></i></a> 
+                </div>
+           </div>
+       
+          </main>  
+  <!-------------------------------HEADER CONTENTS ENDS----------------------------------->
+ <form action="cart.php" method="POST">   
+<br>
 <hr>
+<main class="main1">
 <h2>
     Electronic Products
 </h2>
@@ -146,14 +159,29 @@ html, body {
           ?>
       </div><!-- row Finish -->
   </div><!-- container Finish -->
- 
+  
+<pre>
    
-    
-    
-</body>
 
+
+
+
+
+
+
+
+  
+    </pre>
+</main>
+    </form>
+</body>
+<!------------------------------------FOOTER STARTS--------------------------------------------------->
+<footer>
+<div class="footer">
+  <p><b><br>Contact Us:<br>electro@gmail.com<br></b></p>
+</div>
+</footer>
+<!-------------------------------------FOOTER ENDS-------------------------------------------------->
     
-    <div class="footer">
-      <p>Contact Us:<br>electro@gmail.com<br></p>
-    </div>
+    
 </html>

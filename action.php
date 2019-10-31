@@ -1,11 +1,9 @@
-
 <?php 
-
 session_start();
     $host = 'localhost';  
     $user = 'root';  
     $password = '';  
-    $db_name = 'register';  
+    $db_name = 'ecom_store';  
       
     $con = mysqli_connect($host, $user, $password, $db_name);  
     if(mysqli_connect_errno()) {  
@@ -34,9 +32,9 @@ session_start();
             echo "<h1><center> duplicate data</center></h1>";  
         }  
         else{  
-            $qy= " insert into usr_reg(name,address,email,phno,user,psw)values('$n','$a','$e','$p','$u','$ps')";
+            $qy= " insert into usr_reg(name,address,email,phno,user,psw) values ('$n','$a','$e','$p','$u','$ps')";
     mysqli_query($con,$qy);
-    header ('location: login.html');
+    header ('location: login.php');
              
         }     
 ?>  

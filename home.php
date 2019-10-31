@@ -1,9 +1,9 @@
-
 <?php
 session_start();
 if(!isset($_SESSION['username'])){
-    header('location: login.html');
+    header('location: login.php');
 }
+include("cartItemsCount.php");
 ?>
 
 
@@ -16,30 +16,31 @@ if(!isset($_SESSION['username'])){
 <head>
     <title>page</title>
     <link rel="stylesheet" type="text/css" href="web6.css">
+    <link rel="stylesheet" type="text/css" href="web7.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 </head>
 <meta charset="UTF-8"> 
 <body>
  <main class="main">
- <img src="logo.jpeg"> 
-    <div class="navbar">
-        
-        <div class="container">
-        
-        
-                        <ul>
-                        
-                               
-                                <li><font size="5"><a href="logout.php">LOGOUT</a></font></li>
-
-                        </ul>
-              
-                        <div class="shopping">
-                               <i class="fas fa-shopping-cart"></i>
-                            </div>
-                        
-        </div>
-     </div>
+ 
+      
+   <!---------------------------------HEADER CONTENTS STARTS--------------------------->
+<main class="main">
+        <div class="navbar">
+            <div class="iconbar">
+            <img src="logo.jpeg" height="100px">
+             <a class="loginhead" href="#"></a>
+                  <ul>
+                          <li><font size="6"><a href="logout.php">LOGOUT</a></font></li>
+                  </ul> 
+                <a class="notification" title="Cart" href="cart.php"><span><i class="fa fa-shopping-cart"></i></span>
+                  <span class="badge"><?php countCartItems();?></span></a> 
+                  <a class="notification" title="Home" href="home.php" ><i class="fa fa-home"></i></a> 
+                </div>
+           </div>
+       
+          </main>  
+  <!-------------------------------HEADER CONTENTS ENDS----------------------------------->
      <div class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
@@ -76,7 +77,6 @@ if(!isset($_SESSION['username'])){
  <script>
  var slideIndex = 0;
 showSlides();
-
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -109,7 +109,7 @@ function showSlides() {
                 <p class="title">different sizes of capacitors available in variety.</p>
             </div>
             <div class="card4">
-                       <a href="transistor.php"> <img src="trans.jpg"></a>
+                       <a href="transistor.php"> <img src="transistors_3_pack.jpg"></a>
                                 <h6 class="maintitle">TRANSISTORS </h6>
                                <p class="title">Transistors with all values available.</p>
                     
@@ -121,7 +121,7 @@ function showSlides() {
                             <p class="title">All kinds of breadboards with different sizes and differnt sizes available.</p>
                         </div>
                         <div class="card6">
-                                <a href="wires.php"> <img src="w.jpg"></a>
+                                <a href="wires.php"> <img src="jumper_wires.jpg"></a>
                                     <h6 class="maintitle">WIRES</h6>
                                     <p class="title">All kinds of wires for connectivity available.</p>
                                 </div>
@@ -132,7 +132,7 @@ function showSlides() {
                                         </div>
                                         <div class="card8">
                               <a href="ardi1.php"> <img src="aurdino.jpg"></a>
-                                         <h6 class="maintitle">AURDINO</h6>
+                                         <h6 class="maintitle">ARDUINO</h6>
                                          <p class="title">best deal for IOT enthusiasists.</p>
                                                 
                                                 </div>
@@ -142,9 +142,12 @@ function showSlides() {
        
             
 </body>
-<div class="footer">
-    <p>Connect Us at:<br>electro@gmail.com<br></p>
 
-  </div>
-  
+<!------------------------------------FOOTER STARTS--------------------------------------------------->
+<footer>
+<div class="footer">
+  <p><b><br>Contact Us:<br>electro@gmail.com<br></b></p>
+</div>
+</footer>
+<!-------------------------------------FOOTER ENDS-------------------------------------------------->
    </html>

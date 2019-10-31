@@ -1,0 +1,466 @@
+body{
+    background: #d9d9d9;
+    padding:0;
+    margin: 0;
+    padding-bottom: 40px;
+}
+
+
+/*----------------------------- TOP -----------------------------*/
+.top{
+    width: 100%;
+    height: 25px;
+    background:#007a99;
+    margin: 0;
+}
+.top i{
+    color:#fff;
+    padding-left: 6%;
+    padding-top: 4px;
+    text-shadow: 1px 1px 1px #000;
+}
+.top a{
+    margin-left: 50px;
+    color:#fff;
+    padding-top: 3px;
+    font-family: sans-serif;
+    font-size: 14px;
+    text-shadow: 1px 1px 1px #000;
+}
+
+/*----------------------------- MAINPAGE -----------------------------*/
+.mainpage{
+    width: 84%;
+    height: 80px;
+    background-color: #fff;
+    padding-left: 8%;
+    padding-right: 8%;
+    display: grid;
+    grid-template-columns:4fr 2fr 3fr 5fr;
+    grid-template-rows: 80px;
+    grid-template-areas: 
+        "area1 area2 area3 area4"
+}
+.mainpage img{
+    grid-area: area1;
+    margin-top: 15px;
+    width: 50px;
+    height: 50px;
+}
+.mainpage .title{
+    padding-left: 55px;
+    grid-area: area1;
+    margin-top: 15px;
+    font-family: verdana;
+    font-weight: bold;
+    font-size: 36px;
+}
+.mainpage .phone{
+    grid-area: area2;
+    margin-top: 25px;
+    align-content: center;
+    font-size: 30px;
+    color: #007a99;
+}
+.mainpage .phonetext{
+    grid-area: area2;
+    padding-top: 23px;
+    padding-left: 40px;
+    font-size: 16px;
+    color: rgba(0,0,0,.6);
+    font-family: arial;
+}
+.mainpage .skype{
+    grid-area: area2;
+    padding-top: 40px;
+    padding-left: 40px;
+    font-size: 16px;
+    color: #007a99;
+    font-family: arial; 
+}
+.mainpage .clock{
+    grid-area: area3;
+    padding-top: 23px;
+    padding-left: 0px;
+    font-size: 38px;
+    color: #007a99;
+    padding-right: 15%;
+}
+.mainpage .time1{
+    grid-area: area3;
+    padding-top: 25px;
+    padding-left: 44px;
+    font-size: 16px;
+    color: rgba(0,0,0,.6);
+    font-family: arial;
+}
+.mainpage .time2{
+    grid-area: area3;
+    padding-top: 45px;
+    padding-left:44px;
+    font-size: 15px;
+    color:#007a99;
+    font-family: arial;
+}
+.mainpage .button{
+    grid-area: area4;
+    margin-right: 0px;
+    margin-top: 15px;
+    width: 120px;
+    height: 20px;
+    padding: 15px;
+    color:#fff;
+    font-size: 16px;
+    font-family: sans-serif;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    background:#007a99; 
+    border-radius: 1px;
+}
+
+/*----------------------------- HEADER -----------------------------*/
+.head{
+    background: linear-gradient(rgba(0,0,0,.9),rgba(0,0,0,.2));
+    padding-left: 7%;
+    padding-right: 5%;
+    display: grid;
+    border-bottom: 1px solid #b3b3b3;
+    grid-template-columns:1fr 6fr 3fr 2fr 2fr;
+    height: 50px;
+    grid-template-areas: 
+        "home menu social shopping search"
+}
+
+/* Home */
+.image .home{
+    position: relative;
+    z-index: 1;
+    padding-top: 5%;
+    grid-area: home;
+    color: #007a99;
+    font-size: 35px;
+}
+
+/* Menu */
+.image .menu{
+    grid-area:menu;
+}
+.image .menu ul{
+    display: flex;
+}
+.image .menu ul li{
+    list-style: none;
+}
+.image .menu ul li a{
+    position: relative;
+    z-index: 1;
+    display: block;
+    text-decoration: none;
+    padding-right:50%; 
+    color: #fff;
+    font-family: arial;
+    font-size: 16px;
+}
+.image .menu ul li ul li a{
+    display: none;
+}
+.image .menu ul li ul{
+    display: inline-block;
+    margin-left: -33%;
+    margin-top: 10%;
+}
+.image .menu ul li ul li{
+    display: block;
+}
+.image .menu ul li:hover ul li a{
+    display:block;
+}
+.image .social{
+    grid-area:social;
+    font-size: 35px;
+    color: rgb(230, 230, 230,.9);
+    padding-top: 2%;
+    padding-left: 20%;
+    cursor: pointer;
+}
+.image .shopping{
+    grid-area:shopping;
+    font-size: 25px;
+    color: #007a99;
+    padding-top: 6%;
+    padding-left: 50%;
+
+}
+.image .search{
+    grid-area:search;
+    font-size: 25px;
+    color: #007a99;
+    padding-top: 6%;
+    padding-left: 0;
+    cursor: pointer;
+}
+/*----------------------------- MAİN-İMAGE-------------------------------*/
+.image{
+    /*url:http://cdn.home-designing.com/wp-content/uploads/2016/01/artistic-black-living-room-ideas.jpg*/
+    background: url(http://cdn.home-designing.com/wp-content/uploads/2016/01/artistic-black-living-room-ideas.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 100%;
+    height: 600px;
+    cursor: pointer;
+}
+
+.image .maintitle1{
+    padding-top: 7%;
+    padding-left: 7%;
+    padding-bottom: 0;
+    margin-bottom: 0;
+    font-family: sans;
+    font-size: 40px;
+    color: #007a99;
+    text-shadow: 1px 1px 3px #000,-1px -1px 3px #000;
+    cursor: pointer;
+}
+.image .maintitle2{
+    padding-top: 0;
+    margin-top: 0;
+    padding-left: 7%;
+    font-family:sans;
+    font-size: 36px;
+    color: #fff;
+    text-shadow: 1px 1px 3px #000,-1px -1px 3px #000;
+    cursor: pointer;
+}
+.image .maintitle3{
+    padding-top: 0;
+    margin-top: 0;
+    padding-left: 7%;
+    font-family:verdana;
+    font-size: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 10px #000,-1px -1px 10px #000;
+    cursor: pointer;
+}
+.image .mainbutton1{
+    padding: 1%;
+    margin-top: 0;
+    margin-left: 7%;
+    font-family:verdana;
+    font-size: 15px;
+    color: #fff;
+    display: block;
+    background:#007a99;
+    width:80px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.image .mainbutton2{
+    margin-left: 7.5%;
+    padding-bottom: 3px;
+    font-family:verdana;
+    font-size: 15px;
+    color: #fff;
+    text-shadow: 1px 1px 10px #000,-1px -1px 10px #000;
+    border-bottom: 2px solid #007a99;
+    width: 100px;
+    cursor: pointer;
+}
+
+/*----------------------------- CARDBOX -------------------------------*/
+.cardbox{
+    padding-top: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: 
+        "box card1 card2 card3"
+}
+.cardbox .box{
+    grid-area: box;
+    cursor: pointer;
+}
+.cardbox .card1{
+    grid-area: .card1;
+    background:#fff;
+    box-shadow: 5px 5px 15px #000;
+    cursor: pointer;
+}
+.cardbox .card1 h6{
+    color:#262626;
+    font-family: sans-serif;
+    font-size: 20px;
+    padding:5px 0 0 10px;
+    margin: 0;
+}
+.cardbox .card2{
+    grid-area: .card2;
+    background:#fff;
+    box-shadow: 5px 5px 15px #000;
+    cursor: pointer;
+}
+.cardbox .card2 h6{
+    color:#262626;
+    font-family: sans-serif;
+    font-size: 20px;
+    padding:5px 0 0 10px;
+    margin: 0;
+}
+.cardbox .card3{
+    grid-area: .card3;
+    background:#fff;
+    box-shadow: 5px 5px 15px #000;
+    cursor: pointer;
+}
+.cardbox .card3 h6{
+    color:#262626;
+    font-family: sans-serif;
+    font-size: 20px;
+    padding:5px 0 0 10px;
+    margin: 0;
+}
+.cardbox img{
+    width: 100%;
+    height: 200px;
+    cursor: pointer;
+}
+.box{
+    width: 90%;
+    padding: 0 10px 10px 10px;
+}
+.box h3{
+    color: #262626;
+    font-family: arial;
+    font-size: 35px;
+    border:3px solid #262626;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+}
+.box p{
+    font-family: arial;
+    font-size: 16px;
+    color: #262626;
+    text-align: center;
+    cursor: pointer;
+}
+.title{
+    padding: 0 10px 10px 10px;
+}
+.box .btn{
+    margin: 0 20px 0 20px;
+    text-align: center;
+    padding: 10px 0 10px 0;
+    background:#007a99;
+    color: #fff;
+    font-family: verdana;
+    cursor: pointer;
+}
+
+/*----------------------------- MEDİA -------------------------------*/
+
+@media(min-width:400px) and (max-width:1200px){
+.mainpage{
+        width:90%;
+        height: 65px;
+        background-color: #fff;
+        padding-left: 2%;
+        display: grid;
+        grid-template-columns:2fr 2fr 2fr 2fr;
+        grid-template-rows: 80px;
+        grid-template-areas: 
+            "area1 area2 area3 area4"
+}
+    .mainpage img{
+    margin-top: 12px;
+    width: 40px;
+    height: 40px;
+}
+.mainpage .title{
+    margin-top: 12px;
+    font-size: 30px;
+}
+.mainpage .phone{
+    margin-top: 14px;
+    font-size: 30px;
+}
+.mainpage .phonetext{
+    padding-top: 14px;
+    padding-left: 40px;
+    font-size: 16px;
+}
+.mainpage .skype{
+    padding-top: 32px;
+    font-size: 16px;
+}
+.mainpage .clock{
+    padding-top: 10px;
+    font-size: 38px;
+}
+.mainpage .time1{
+    padding-top: 15px;
+    font-size: 14px;
+}
+.mainpage .time2{
+    padding-top: 33px;
+    font-size: 13px;
+}
+.mainpage .button{
+    margin-top: 8px;
+}
+.image{
+    /*url:http://cdn.home-designing.com/wp-content/uploads/2016/01/artistic-black-living-room-ideas.jpg*/
+    background: url(mainimage.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100%;
+    height: 500px;
+    cursor: pointer;
+}
+.image .menu ul li a{
+    position: relative;
+    z-index: 1;
+    display: block;
+    text-decoration: none;
+    padding-right:50%; 
+    color: #fff;
+    font-family: arial;
+    font-size: 13px;
+}
+.head{
+
+    grid-template-areas: 
+        "home menu shopping search"
+        ". . . social"
+}
+.head .shopping{
+    font-size: 25px;
+    padding-top: 12px;
+}
+.head .search{
+    font-size: 25px;
+    padding-left: 20px;
+    padding-top: 12px;
+}
+.head .social{
+    padding-left: 20px;
+}
+.cardbox{
+    padding-top: 30px;
+    padding-left: 80px;
+    padding-right: 80px;
+    display: grid;
+    grid-gap: 30px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas: 
+        "box card1"
+        "card2 card3"
+}
+}

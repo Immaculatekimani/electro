@@ -1,8 +1,12 @@
+<?php 
+include("cartItemsCount.php");
+?>
+
 <!DOCTYPE html>
 
 <head>
     <title>page</title>
-    <link rel="stylesheet" type="text/css" href="web6.css">
+    <link rel="stylesheet" type="text/css" href="web7.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
 
 <style>
@@ -10,24 +14,20 @@ body, html {
   height: 100%;
   font-family: Arial, Helvetica, sans-serif;
 }
-
 * {
   box-sizing: border-box;
 }
-
 .bg-img {
   /* The image used */
   background-image: url("electronic.jpg");
-
   min-height: 1000px;
-
   /* Center and scale the image nicely */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
+  
 }
-
 /* Add styles to the form container */
 .fcontainer {
   position: absolute;
@@ -37,7 +37,6 @@ body, html {
   padding: 25px; 
   background-color: white;
 }
-
 /* Full-width input fields */
 input[type=text], input[type=password], input[type=email] {
   width: 100%;
@@ -46,13 +45,11 @@ input[type=text], input[type=password], input[type=email] {
   border: none;
   background: #f1f1f1;
 }
-
 input[type=text]:focus, input[type=password]:focus, input[type=email]:focus 
  {
   background-color: #ddd;
   outline: none;
 }
-
 /* Set a style for the submit button */
 .btn {
   background-color: green;
@@ -63,24 +60,18 @@ input[type=text]:focus, input[type=password]:focus, input[type=email]:focus
   width: 100%;
   opacity: 0.9;
 }
-
 .btn:hover {
    background-color: red;
   opacity: 1;
 }
-
 .btn1:hover {
    text-decoration-color: red;
   opacity: 0.8;
 }
-
-
-
 body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 20px;
 }
-
 #myBtn {
   display: none;
   position: fixed;
@@ -96,7 +87,6 @@ body {
   padding: 15px;
   border-radius: 4px;
 }
-
 #myBtn:hover {
   background-color: #555;
 }
@@ -105,22 +95,25 @@ body {
 </head>
 <meta charset="UTF-8"> 
 <body>
-  <img src="logo.jpeg"> 
-        <main class="main">
-                <div class="navbar">
-                   <div class="container">
-                                   <ul>
-                                          
-                                           <li><font size="5"><a href="login.html">LOGIN</a></font></li>
-           
-                                   </ul>
-                         
-                                   <div class="shopping">
-                                          <i class="fas fa-shopping-cart"></i>
-                                       </div>
-                                   
-                   </div>
+  
+     
+   <!---------------------------------HEADER CONTENTS STARTS--------------------------->
+<main class="main">
+        <div class="navbar">
+            <div class="iconbar">
+            <img src="logo.jpeg" height="100px">
+             <a class="loginhead" href="#"></a>
+                  <ul>
+                          <li><font size="6"><a href="login.php">LOGIN</a></font></li>
+                  </ul> 
+                <a class="notification" title="Cart" href="cart.php"><span><i class="fa fa-shopping-cart"></i></span>
+                  <span class="badge"><?php countCartItems();?></span></a> 
+                  <a class="notification" title="Home" href="index1.php" ><i class="fa fa-home"></i></a> 
                 </div>
+           </div>
+       
+          </main>  
+  <!-------------------------------HEADER CONTENTS ENDS----------------------------------->
 
 <div class="bg-img">
   <form action="action1.php" method="POST"class="fcontainer">
@@ -139,7 +132,7 @@ body {
     <button type="Login" value="submit"class="btn">Login</button>
 
     
-    <h5 ><center>create account<a href=register.html>Sign up</a></center></h5>
+    <h5 ><center>Create account?<a href="sign_in.php">Sign up</a></center></h5>
   </form>
 </div>
 <button onclick="topFunction()" id="myBtn" title="Go to top">^</button>
@@ -160,7 +153,6 @@ body {
           document.body.scrollTop = 0;
           document.documentElement.scrollTop = 0;
         }
-
         //to show password
         function myFunc_show_psw() {
   var x = document.getElementById("myInput");
@@ -170,7 +162,6 @@ body {
     x.type = "password";
   }
 }
-
 function myFunc_show_cpsw() {
   var x = document.getElementById("myInput1");
   if (x.type === "password") {
@@ -182,9 +173,12 @@ function myFunc_show_cpsw() {
         </script>
 
 </body>
+<!------------------------------------FOOTER STARTS--------------------------------------------------->
+<footer>
 <div class="footer">
-  <p>Connect Us at:<br>electro@gmail.com<br></p>
-
+  <p><b><br>Contact Us:<br>electro@gmail.com<br></b></p>
 </div>
+</footer>
+<!-------------------------------------FOOTER ENDS-------------------------------------------------->
 
 </html>

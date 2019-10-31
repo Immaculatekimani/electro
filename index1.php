@@ -1,8 +1,12 @@
+<?php
+include("cartItemsCount.php");
+?>
 <!DOCTYPE html>
 <html>
 <head>
     <title>page</title>
     <link rel="stylesheet" type="text/css" href="web6.css">
+    <link rel="stylesheet" type="text/css" href="web7.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
@@ -10,26 +14,25 @@
 <body>
  <main class="main">
    
-    <img src="logo.jpeg"> 
-                                        
-   
-    <div class="navbar">
+     
+          
+   <!---------------------------------HEADER CONTENTS STARTS--------------------------->
+<main class="main">
+        <div class="navbar">
+            <div class="iconbar">
+            <img src="logo.jpeg" height="100px">
+             <a class="loginhead" href="#"></a>
+                  <ul>
+                          <li><font size="6"><a href="login.php">LOGIN</a></font></li>
+                  </ul> 
+                <a class="notification" title="Cart" href="login.php"><span><i class="fa fa-shopping-cart"></i></span>
+                  <span class="badge"><?php countCartItems();?></span></a> 
+                  <a class="notification" title="Home" href="index1.php" ><i class="fa fa-home"></i></a> 
+                </div>
+           </div>
        
-        <div class="container">
-            
-        
-                        <ul>
-                               
-                                <li><font size="5"><a href="login.html">LOGIN</a></font></li>
-
-                        </ul>
-              
-                        <div class="shopping">
-                               <i class="fas fa-shopping-cart"></i>
-                            </div>
-                        
-        </div>
-     </div>
+          </main>  
+  <!-------------------------------HEADER CONTENTS ENDS----------------------------------->
      <div class="slideshow-container">
 
         <!-- Full-width images with number and caption text -->
@@ -66,7 +69,6 @@
  <script>
  var slideIndex = 0;
 showSlides();
-
 function showSlides() {
   var i;
   var slides = document.getElementsByClassName("mySlides");
@@ -84,44 +86,44 @@ function showSlides() {
         <div class="cardbox">
             
          <div class="card1">
-             <a href="login.html"> <img src="d.jpg"></a>
+             <a href="login.php"> <img src="d.jpg"></a>
                  <h6 class="maintitle">RESISTORS</h6>
                  <p class="title">All kinds of resistors with different resistance values and diffeent sizes available.</p>
             </div>
             <div class="card2">
-                 <a href="login.html"> <img src="led.jpg"></a>
+                 <a href="login.php"> <img src="led.jpg"></a>
                       <h6 class="maintitle">LED</h6>
                         <p class="title">led's of all coloursand shapes at cheaper rate.</p>
             </div>
             <div class="card3">
-                 <a href="login.html"> <img src="cap.jpg"></a>
+                 <a href="login.php"> <img src="cap.jpg"></a>
                      <h6 class="maintitle">CAPACITORS</h6>
                       <p class="title">different sizes of capacitors available in variety.</p>
             </div>
             <div class="card4">
-                   <a href="login.html"> <img src="aurdino.jpg"></a>
-                     <h6 class="maintitle">AURDINO</h6>
+                   <a href="login.php"> <img src="aurdino.jpg"></a>
+                     <h6 class="maintitle">ARDUINO</h6>
                      <p class="title">best deal for IOT enthusiasists.</p>
                 </div>
                 
                 <div class="card5">
-                        <a href="login.html"> <img src="br.png"> </a>
+                        <a href="login.php"> <img src="br.png"> </a>
                             <h6 class="maintitle">BREADBOARD</h6>
                             <p class="title">All kinds of breadboards with different sizes and differnt sizes available.</p>
                         </div>
                         <div class="card6">
-                                <a href="login.html"> <img src="w.jpg"></a>
+                                <a href="login.php"> <img src="jumper_wires.jpg"></a>
                                     <h6 class="maintitle">WIRES</h6>
                                     <p class="title">All kinds of wires for connectivity available.</p>
                                 </div>
                                 <div class="card7">
-                                        <a href="login.html"> <img src="inductor.jpg"></a>
+                                        <a href="login.php"> <img src="inductor.jpg"></a>
                                           
                                             <h6 class="maintitle">INDUCTORS</h6>
                                             <p class="title">All kinds of inductors available.</p>
                                         </div>
                                         <div class="card8">
-                                                <a href="login.html"> <img src="trans.jpg"></a>
+                                                <a href="login.php"> <img src="transistors_3_pack.jpg"></a>
                                                   
                                                     <h6 class="maintitle">TRANSISTORS </h6>
                                                     <p class="title">Transistors with all values available.</p>
@@ -132,9 +134,12 @@ function showSlides() {
        
             
 </body>
+<!------------------------------------FOOTER STARTS--------------------------------------------------->
+<footer>
 <div class="footer">
-    <p>Connect Us at:<br>electro@gmail.com<br></p>
-
-  </div>
+  <p><b><br>Contact Us:<br>electro@gmail.com<br></b></p>
+</div>
+</footer>
+<!-------------------------------------FOOTER ENDS-------------------------------------------------->
   
    </html>

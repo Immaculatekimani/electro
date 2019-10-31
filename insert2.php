@@ -1,15 +1,16 @@
 <?php 
 
 include("includes/db.php");
+include("cartItemsCount.php");
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+<meta charset="UTF-8">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="style/css/web7.css">
+    
+    <link rel="stylesheet" type="text/css" href="web7.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title> Insert Products </title>
@@ -129,18 +130,24 @@ select {
 </head>
 <meta charset="UTF-8"> 
 <body>
-
-        <main class="main">
-                <div class="navbar">
-                   <div class="container">
-                                   <ul>
-                                          
-                                           <li><font size="5"><a href="#">LOGIN</a></font></li>
-           
-                                   </ul>
-                         
-                   </div>
+   
+   <!---------------------------------HEADER CONTENTS STARTS--------------------------->
+   <main class="main">
+        <div class="navbar">
+            <div class="iconbar">
+            <img src="logo.jpeg" height="100px">
+             <a class="loginhead" href="#"></a>
+                  <ul>
+                  <li><font size="6"><a href="logout.php">LOGOUT</a></font></li>
+                  </ul> 
+                <a class="notification" title="Cart" href="cart.php"><span><i class="fa fa-shopping-cart"></i></span>
+                  <span class="badge"><?php countCartItems();?></span></a> 
+                  <a class="notification" title="Home" href="home.php" ><i class="fa fa-home"></i></a> 
                 </div>
+           </div>
+       
+          </main>  
+  <!-------------------------------HEADER CONTENTS ENDS----------------------------------->
 <div class="bg-img">
 <form  method="POST" class="fcontainer" enctype="multipart/form-data" action="">
     <h1>Admin Page</h1>
@@ -209,10 +216,13 @@ select {
       text-align: center;
     }
     </style>
-    
-    <div class="footer">
-      <p>Contact Us:<br>electro@gmail.com<br></p>
-    </div>
+    <!------------------------------------FOOTER STARTS--------------------------------------------------->
+<footer>
+<div class="footer">
+  <p><b><br>Contact Us:<br>electro@gmail.com<br></b></p>
+</div>
+</footer>
+<!-------------------------------------FOOTER ENDS-------------------------------------------------->
 </html>
 
 

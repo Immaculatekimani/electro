@@ -1,6 +1,7 @@
+
 <?php 
 
-$db = mysqli_connect("localhost","root","","register");
+$db = mysqli_connect("localhost","root","","ecom_store");
 
 function getPro()
 {
@@ -25,7 +26,9 @@ function getPro()
         $pro_desc = $row_products['ardi_desc'];
         
        { echo 
-        "<main class='container'> 
+        "
+      
+        <main class='container'> 
          <div class='left-column'>
            
                 <a href='details.php?pro_id=$pro_id'>
@@ -42,10 +45,11 @@ function getPro()
                 $pro_desc<br>
                 
                   <h3>  Rs $pro_price<br></h3>
-                
-                    <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
-                        <i class='fa fa-shopping-cart'></i> Add to Cart
-                    </a><br>
+                   
+                  <button type=submit class=cart-btn name=a$pro_id ><i class='fa fa-shopping-cart' ></i> <b>ADD TO CART</b></button>
+               
+
+                    <br>
                 </div>
         </div>
         </main>";}
@@ -53,5 +57,8 @@ function getPro()
     }
     
 }
-
+//<input type=button  class=cart-btn  value=ADD_TO_CART><br><br>
+                   // <a class='btn btn-primary' href='cart.php?pro_id=$pro_id'>
+                  // <i class='fa fa-shopping-cart'></i> Add to Cart
 ?>
+</html>

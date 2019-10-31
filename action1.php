@@ -1,10 +1,9 @@
 <?php 
-
 session_start();
     $host = 'localhost';  
     $user = 'root';  
     $password = '';  
-    $db_name = 'register';  
+    $db_name = 'ecom_store';  
       
     $con = mysqli_connect($host, $user, $password, $db_name);  
     if(mysqli_connect_errno()) {  
@@ -28,11 +27,12 @@ session_start();
         
         
             if($count == 1){  
+                
             $_SESSION['username'] = $u;   
             header ('location: home.php');
            }  
             else if($count == 0 && $u!="admin"){ 
-            header ('location: login.html');
+            header ('location: login.php');
                 } 
                 else{
                     header('location: insert2.php');

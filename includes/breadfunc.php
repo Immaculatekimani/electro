@@ -1,6 +1,6 @@
 <?php 
 
-$db = mysqli_connect("localhost","root","","register");
+$db = mysqli_connect("localhost","root","","ecom_store");
 
 function getPro()
 {
@@ -43,9 +43,9 @@ function getPro()
                 
                   <h3>  Rs $pro_price<br></h3>
                 
-                    <a class='btn btn-primary' href='details.php?pro_id=$pro_id'>
-                        <i class='fa fa-shopping-cart'></i> Add to Cart
-                    </a><br>
+                  <button type=submit class=cart-btn name=b$pro_id ><i class='fa fa-shopping-cart' ></i> <b>ADD TO CART</b></button>
+
+                   <br>
                 </div>
         </div>
         </main>";}
